@@ -1,0 +1,21 @@
+{
+    "name": "bitixel/paycorp",
+    "description": "Paycorp API - PHP",
+    "license": "MIT",
+    "keywords": ["paycorp"],
+    "authors": [
+        {
+            "name": "Bitixel Crew",
+            "email": "info@bitixel.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "bitixel\\paycorp\\": "src"
+        }
+    }
+}
