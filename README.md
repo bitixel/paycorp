@@ -2,7 +2,7 @@
 Paycorp's PHP SDK and samples for REST API 
 
 ## Please Note
-> **This is a modified version of the Official PHP SDK, in order to support PSR-4 autoloading support. Please contact the electronic banking unit of your bank for official SDK**
+> **This is a modified version of the Official PHP SDK, in order to support PSR-4 autoloading. Please contact the electronic banking unit of your bank for official SDK**
 
 Installation
 -----------------
