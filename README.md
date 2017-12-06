@@ -131,7 +131,7 @@ try {
   } 
 } catch (PaycorpException $e) {
   echo 'Caught exception: ' .  $e->getMessage() . '<br>';
-  echo 'Code: ',  $e->getShortCode(), "\n";
+  echo 'Code: ' . $e->getShortCode() . '<br>';
 } catch (\Exception $e) {
   echo 'Caught exception: ' .  $e->getMessage() . '<br>';
 }
