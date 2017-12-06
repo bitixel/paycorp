@@ -36,17 +36,24 @@ use bitixel\paycorp\component\Redirect;
 use bitixel\paycorp\exceptions\PaycorpException;
 
 $paycorp_credentials = [
-	'serviceEndpoint' => '',
-	'authToken' => '',
-	'hmacSecret' => '',
-	'validateOnly' => '',
-	'ClientId' => ''
+	'serviceEndpoint' => 'https://xxxx.paycorp.com.au/rest/service/proxy',
+	'authToken' => 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+	'hmacSecret' => 'xXxxXxxxxxXXXxXx',
+	'validateOnly' => FALSE,
+	'ClientId' => '1234'
 ];
+
+/** serviceEndpoints **
+* sampath bank : https://sampath.paycorp.com.au/rest/service/proxy
+* commercial bank : https://test-combank.paycorp.com.au/rest/service/proxy
+*/
 
 $payment = [
 	'amount' => 100.00,
 	'currency' => 'USD',
-	'ClientRef' => '123'
+	//'clientRef' => '1234',
+	//'comment' => 'test comment',
+	//'extraData' => ["orderId" => 456, "sessionId" => 789]
 ];
 
 $returnUrl = 'http://localhost/payment/return';
@@ -63,7 +70,9 @@ $initRequest = new PaymentInitRequest();
 
 $initRequest->setClientId($paycorp_credentials['ClientId']);
 $initRequest->setTransactionType(TransactionType::$PURCHASE);
-$initRequest->setClientRef($payment['currency']);
+//$initRequest->setClientRef($payment['clientRef']);
+//$initRequest->setComment($payment['comment']);
+//$initRequest->setExtraData($payment['extraData']);
 
 $transactionAmount = new TransactionAmount($payment['amount'] * 100);
 $transactionAmount->setCurrency($payment['currency']);
@@ -100,11 +109,11 @@ use bitixel\paycorp\exceptions\PaycorpException;
 use bitixel\paycorp\payment\PaymentCompleteRequest;
 
 $paycorp_credentials = [
-	'serviceEndpoint' => '',
-	'authToken' => '',
-	'hmacSecret' => '',
-	'validateOnly' => '',
-	'ClientId' => ''
+	'serviceEndpoint' => 'https://xxxx.paycorp.com.au/rest/service/proxy',
+	'authToken' => 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+	'hmacSecret' => 'xXxxXxxxxxXXXxXx',
+	'validateOnly' => FALSE,
+	'ClientId' => '1234'
 ];
 
 $clientConfig = new ClientConfig();
