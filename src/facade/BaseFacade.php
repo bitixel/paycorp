@@ -66,7 +66,7 @@ abstract class BaseFacade {
 
     private function buildResponse($response, $jsonHelper) {
         $response_array = json_decode($response, TRUE);
-            if($response_array['error'] != NULL){
+            if(isset($response_array['error']) && $response_array['error'] != NULL){
                 $ex = new PaycorpException($response_array['error']['text']);
                 $ex->setShortCode($response_array['error']['code']);
                 throw $ex;
